@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using SystemInfo.Properties;
 using System.Management;
 
 namespace SystemInfo
@@ -25,23 +24,27 @@ namespace SystemInfo
                             // додано інші типи, які часто означають ноутбук (наприклад 14 — SubNotebook)
                             var laptopTypes = new ushort[] { 8, 9, 10, 14, 30 };
                             if (chassisTypes.Any(t => laptopTypes.Contains(t)))
-                                return "Ноутбук";
+                            {
+                                return Resources.Notebook;
+                            }
                             else
-                                return "ПК";
+                            {
+                                return Resources.PC;
+                            }
                         }
                     }
                 }
             }
             catch (ManagementException)
             {
-                return "Невідомо";
+                return Resources.Management;
             }
             catch (UnauthorizedAccessException)
             {
-                return "Невідомо";
+                return Resources.UnauthorizedAccess;
             }
 
-            return "Невідомо";
+            return Resources.Unknown;
         }
     }
 }

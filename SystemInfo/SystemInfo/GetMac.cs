@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using SystemInfo.Properties;
 using System.Net.NetworkInformation;
 
 namespace SystemInfo
@@ -12,16 +11,16 @@ namespace SystemInfo
                 .Where(n =>
                     n.NetworkInterfaceType != NetworkInterfaceType.Loopback &&
                     n.NetworkInterfaceType != NetworkInterfaceType.Tunnel &&
-                    n.OperationalStatus == OperationalStatus.Up)
+                    n.GetPhysicalAddress().GetAddressBytes().Length > 0)
                 .Select(n => n.GetPhysicalAddress().GetAddressBytes())
-                .FirstOrDefault(b => b != null && b.Length > 0);
+                .FirstOrDefault();
 
             if (bytes != null && bytes.Length > 0)
             {
                 return string.Join("-", bytes.Select(b => b.ToString("X2")));
             }
 
-            return "MAC-адресу не знайдено";
+            return Resources.MacAddressNotFound;
         }
     }
 }
