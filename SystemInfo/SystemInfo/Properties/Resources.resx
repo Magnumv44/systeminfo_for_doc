@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DeviceType" xml:space="preserve">
+    <value>Тип пристрою: </value>
+  </data>
   <data name="Exit" xml:space="preserve">
     <value>Для виходу натиснiть клавiшу ENTER.</value>
   </data>
   <data name="FileCreatedSuccessfully" xml:space="preserve">
     <value>Файл успiшно створено та записано:</value>
+  </data>
+  <data name="LicenseKey" xml:space="preserve">
+    <value>Ліцензійний ключ операційної системи: </value>
   </data>
   <data name="LinuxOS" xml:space="preserve">
     <value>Використовується операцiйна система Linux. Ключ непотрiбен.</value>

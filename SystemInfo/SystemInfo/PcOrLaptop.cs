@@ -9,6 +9,16 @@ namespace SystemInfo
 {
     public static class PcOrLaptop
     {
+        #region GetPcOrLaptop
+        /// <summary>
+        /// Determines whether the current device is identified as a PC or a laptop based on the operating system
+        /// platform.
+        /// </summary>
+        /// <remarks>The method uses the operating system platform to infer the device type. The returned
+        /// value may vary depending on platform-specific detection logic and may not be accurate for all hardware
+        /// configurations.</remarks>
+        /// <returns>A string indicating whether the device is a PC or a laptop. Returns a platform-specific value, or "Unknown"
+        /// if the platform is not recognized.</returns>
         public static string GetPcOrLaptop()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -26,7 +36,19 @@ namespace SystemInfo
 
             return Resources.Unknown;
         }
+        #endregion
 
+        #region GetPcOrLaptopWindows
+        /// <summary>
+        /// Determines whether the current Windows device is identified as a laptop or a desktop PC based on system
+        /// enclosure information.
+        /// </summary>
+        /// <remarks>This method queries the system's enclosure information using Windows Management
+        /// Instrumentation (WMI) to classify the device. If access to WMI is denied or a management error occurs, a
+        /// corresponding error message is returned. The method is intended for use on Windows platforms and may not
+        /// provide meaningful results on other operating systems.</remarks>
+        /// <returns>A string indicating the device type: a value representing "Notebook" if the device is a laptop, "PC" if it
+        /// is a desktop, or an appropriate error message if the device type cannot be determined.</returns>
         private static string GetPcOrLaptopWindows()
         {
             try
@@ -67,7 +89,19 @@ namespace SystemInfo
 
             return Resources.Unknown;
         }
+        #endregion
 
+        #region GetPcOrLaptopLinux
+        /// <summary>
+        /// Determines whether the current Linux device is identified as a laptop or a desktop PC based on system
+        /// chassis information.
+        /// </summary>
+        /// <remarks>This method reads the chassis type from the Linux system file
+        /// "/sys/class/dmi/id/chassis_type". If the file is unavailable or an error occurs during reading, the method
+        /// returns a value representing "Unknown". The returned strings are typically sourced from application
+        /// resources and may vary depending on localization.</remarks>
+        /// <returns>A string indicating the device type: a value representing "Notebook" if the chassis type matches known
+        /// laptop identifiers, "PC" if it does not, or "Unknown" if the device type cannot be determined.</returns>
         private static string GetPcOrLaptopLinux()
         {
             try
@@ -94,7 +128,17 @@ namespace SystemInfo
 
             return Resources.Unknown;
         }
+        #endregion
 
+        #region GetPcOrLaptopMacOS
+        /// <summary>
+        /// Determines whether the current macOS device is a notebook (MacBook) or a desktop (PC) based on system
+        /// information.
+        /// </summary>
+        /// <remarks>This method inspects the hardware model using the 'sysctl hw.model' command. If the
+        /// model name contains 'MacBook', the device is considered a notebook; otherwise, it is considered a PC. If an
+        /// error occurs while retrieving system information, the method returns an unknown device type.</remarks>
+        /// <returns>A string indicating the device type: notebook, PC, or unknown if the type cannot be determined.</returns>
         private static string GetPcOrLaptopMacOS()
         {
             try
@@ -130,5 +174,6 @@ namespace SystemInfo
 
             return Resources.Unknown;
         }
+        #endregion
     }
 }

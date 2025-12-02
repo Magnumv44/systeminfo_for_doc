@@ -61,6 +61,15 @@ namespace SystemInfo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Тип пристрою: .
+        /// </summary>
+        internal static string DeviceType {
+            get {
+                return ResourceManager.GetString("DeviceType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Для виходу натиснiть клавiшу ENTER..
         /// </summary>
         internal static string Exit {
@@ -75,6 +84,15 @@ namespace SystemInfo.Properties {
         internal static string FileCreatedSuccessfully {
             get {
                 return ResourceManager.GetString("FileCreatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ліцензійний ключ операційної системи: .
+        /// </summary>
+        internal static string LicenseKey {
+            get {
+                return ResourceManager.GetString("LicenseKey", resourceCulture);
             }
         }
         
