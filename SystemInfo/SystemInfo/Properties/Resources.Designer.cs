@@ -19,7 +19,7 @@ namespace SystemInfo.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,11 +61,38 @@ namespace SystemInfo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Файл успішно створено та записано:.
+        ///   Looks up a localized string similar to Для виходу натиснiть клавiшу ENTER..
+        /// </summary>
+        internal static string Exit {
+            get {
+                return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Файл успiшно створено та записано:.
         /// </summary>
         internal static string FileCreatedSuccessfully {
             get {
                 return ResourceManager.GetString("FileCreatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Використовується операцiйна система Linux. Ключ непотрiбен..
+        /// </summary>
+        internal static string LinuxOS {
+            get {
+                return ResourceManager.GetString("LinuxOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MAC-адреса: .
+        /// </summary>
+        internal static string MAC {
+            get {
+                return ResourceManager.GetString("MAC", resourceCulture);
             }
         }
         
@@ -79,7 +106,16 @@ namespace SystemInfo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Помилка запиту WMI, спробуйте запустити з правами адміністратора.
+        ///   Looks up a localized string similar to Використовується операцiйна система macOS. Ключ непотрiбен..
+        /// </summary>
+        internal static string macOS {
+            get {
+                return ResourceManager.GetString("macOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Помилка запиту WMI, спробуйте запустити з правами адмiнiстратора.
         /// </summary>
         internal static string Management {
             get {
@@ -106,7 +142,16 @@ namespace SystemInfo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Немає прав доступу до запиту WMI, перезапустіть програму з правами адміністратора.
+        ///   Looks up a localized string similar to Iм&apos;я пристрою: .
+        /// </summary>
+        internal static string PcName {
+            get {
+                return ResourceManager.GetString("PcName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Немає прав доступу до запиту WMI, перезапустiть програму з правами адмiнiстратора.
         /// </summary>
         internal static string UnauthorizedAccess {
             get {
@@ -120,6 +165,15 @@ namespace SystemInfo.Properties {
         internal static string Unknown {
             get {
                 return ResourceManager.GetString("Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тип операційної системи не визначено.
+        /// </summary>
+        internal static string UnknownOS {
+            get {
+                return ResourceManager.GetString("UnknownOS", resourceCulture);
             }
         }
     }

@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
+using System.Text;
 using SystemInfo.Properties;
 
 namespace SystemInfo
@@ -7,37 +9,44 @@ namespace SystemInfo
     {
         static void Main(string[] args)
         {
-            string osInformations = string.Empty;
+            var osInformations = new StringBuilder();
 
+            // Визначення ОС
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                Console.WriteLine(PcOrLaptop.GetPcOrLaptop());
-                Console.WriteLine(KeyDecoder.GetWindowsProductKeyFromRegistry());
-                osInformations = $"{PcOrLaptop.GetPcOrLaptop()}\n{KeyDecoder.GetWindowsProductKeyFromRegistry()}";
+                var pcOrLaptop = PcOrLaptop.GetPcOrLaptop();
+                var productKey = KeyDecoder.GetWindowsProductKeyFromRegistry();
+
+                osInformations.AppendLine(pcOrLaptop)
+                              .AppendLine(productKey);
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                Console.WriteLine("Використовується операційна система Linux. Ключ непотрібен.");
-                osInformations = "Використовується операційна система Linux. Ключ непотрібен.";
+                osInformations.AppendLine(Resources.LinuxOS);
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
-                Console.WriteLine("Використовується операційна система macOS. Ключ непотрібен.");
-                osInformations = "Використовується операційна система macOS. Ключ непотрібен.";
+                osInformations.AppendLine(Resources.macOS);
             }
             else
             {
-                Console.WriteLine("Невідомо (не Windows)");
-                osInformations = "Невідомо (не Windows)";
+                osInformations.AppendLine(Resources.UnknownOS);
             }
 
-            Console.WriteLine("MAC-адреса:" + GetMac.GetMacAddress());
-            Console.WriteLine("Iм'я пристрою:" + Environment.MachineName);
+            // Отримання MAC-адреси та імені пристрою
+            var macAddress = GetMac.GetMacAddress();
+            var machineName = Environment.MachineName;
 
-            osInformations += $"\nMAC-адреса: {GetMac.GetMacAddress()}\nIм'я пристрою: {Environment.MachineName}";
+            osInformations.AppendLine(Resources.MAC + macAddress)
+                          .AppendLine(Resources.PcName + machineName);
 
-            CreateWriteTextFile.CreateAndWriteFile(osInformations);
+            Console.WriteLine(osInformations);
 
+            // Запис у файл
+            CreateWriteTextFile.CreateAndWriteFile(osInformations.ToString());
+
+            Console.WriteLine(Resources.Exit);
+            Console.ReadLine();
         }
     }
 }

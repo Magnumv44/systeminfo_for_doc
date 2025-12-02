@@ -117,14 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Exit" xml:space="preserve">
+    <value>Для виходу натиснiть клавiшу ENTER.</value>
+  </data>
   <data name="FileCreatedSuccessfully" xml:space="preserve">
-    <value>Файл успішно створено та записано:</value>
+    <value>Файл успiшно створено та записано:</value>
+  </data>
+  <data name="LinuxOS" xml:space="preserve">
+    <value>Використовується операцiйна система Linux. Ключ непотрiбен.</value>
+  </data>
+  <data name="MAC" xml:space="preserve">
+    <value>MAC-адреса: </value>
   </data>
   <data name="MacAddressNotFound" xml:space="preserve">
     <value>MAC-адресу не знайдено</value>
   </data>
+  <data name="macOS" xml:space="preserve">
+    <value>Використовується операцiйна система macOS. Ключ непотрiбен.</value>
+  </data>
   <data name="Management" xml:space="preserve">
-    <value>Помилка запиту WMI, спробуйте запустити з правами адміністратора</value>
+    <value>Помилка запиту WMI, спробуйте запустити з правами адмiнiстратора</value>
   </data>
   <data name="Notebook" xml:space="preserve">
     <value>Ноутбук</value>
@@ -132,10 +144,16 @@
   <data name="PC" xml:space="preserve">
     <value>Персональний комп'ютер (ПК)</value>
   </data>
+  <data name="PcName" xml:space="preserve">
+    <value>Iм'я пристрою: </value>
+  </data>
   <data name="UnauthorizedAccess" xml:space="preserve">
-    <value>Немає прав доступу до запиту WMI, перезапустіть програму з правами адміністратора</value>
+    <value>Немає прав доступу до запиту WMI, перезапустiть програму з правами адмiнiстратора</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Тип пристрою невизначено</value>
+  </data>
+  <data name="UnknownOS" xml:space="preserve">
+    <value>Тип операційної системи не визначено</value>
   </data>
 </root>
