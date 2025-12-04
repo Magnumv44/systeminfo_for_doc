@@ -127,7 +127,7 @@
     <value>Файл успiшно створено та записано:</value>
   </data>
   <data name="LicenseKey" xml:space="preserve">
-    <value>Ліцензійний ключ операційної системи: </value>
+    <value>Лiцензiйний ключ операцiйної системи: </value>
   </data>
   <data name="LinuxOS" xml:space="preserve">
     <value>Використовується операцiйна система Linux. Ключ непотрiбен.</value>

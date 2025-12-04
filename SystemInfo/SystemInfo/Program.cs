@@ -17,8 +17,8 @@ namespace SystemInfo
                 var pcOrLaptop = PcOrLaptop.GetPcOrLaptop();
                 var productKey = KeyDecoder.GetWindowsProductKeyFromRegistry();
 
-                osInformations.AppendLine(pcOrLaptop)
-                              .AppendLine(productKey);
+                osInformations.AppendLine(Resources.DeviceType + pcOrLaptop)
+                              .AppendLine(Resources.LicenseKey + productKey);
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {

@@ -88,7 +88,7 @@ namespace SystemInfo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ліцензійний ключ операційної системи: .
+        ///   Looks up a localized string similar to Лiцензiйний ключ операцiйної системи: .
         /// </summary>
         internal static string LicenseKey {
             get {
