@@ -10,6 +10,19 @@
 ## Компіляція
 Процес компіляції не потребує жодних особливих умов.
 
+## Запуск та використання
+Після компіляції, запустіть утиліту. Вона автоматично збере інформацію та відобразить її на екрані. Після цього файл з інформацією буде створено в директорії запуску утиліти.
+
+## Відомості про тестування
+| Операційна система | Тестування виконано |
+| :-- |:---:|
+| Windows 10 | ✅ |
+| Windows 11 | ✅ |
+| Windows 7 | ✅ |
+| Windows 8.1 | ✅ |
+| Linux | ❌ |
+| macOS | ❌ |
+
 ### Ресурси що використані в проекті
 * <a target="_blank" href="https://icons8.com/icon/iSNxtIhB8C9B/laptop-settings">Параметри ноутбука</a> іконка від <a target="_blank" href="https://icons8.com">Icons8</a>
-* Використано клас `KeyDecoder` з проекту – [WinProdKeyFinder](https://github.com/mrpeardotnet/WinProdKeyFinder)
+* Використано клас `KeyDecoder` з проекту – [WinProdKeyFinder](https://github.com/mrpeardotnet/WinProdKeyFinder) для декодування ліцензійного ключа Windows.
